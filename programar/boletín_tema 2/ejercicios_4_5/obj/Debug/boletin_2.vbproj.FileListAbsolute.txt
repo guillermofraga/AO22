@@ -1,0 +1,11 @@
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\bin\Debug\ejercicios_4_5.exe.config
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\bin\Debug\ejercicios_4_5.exe
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\bin\Debug\ejercicios_4_5.pdb
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\bin\Debug\ejercicios_4_5.xml
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\ejercicios_4_5.Resources.resources
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\boletin_2.vbproj.GenerateResource.cache
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\boletin_2.vbproj.CoreCompileInputs.cache
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\ejercicios_4_5.exe
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\ejercicios_4_5.xml
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\ejercicios_4_5.pdb
+C:\Users\alumno\Documents\programar\ejercicios_4_5_6_7\ejercicios_4_5\obj\Debug\boletin_2.vbproj.AssemblyReference.cache
