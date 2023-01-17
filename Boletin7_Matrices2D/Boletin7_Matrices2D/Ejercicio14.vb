@@ -7,6 +7,8 @@
 
         mostrarMatriz(matriz)
 
+        Console.WriteLine("")
+
         If matriz.GetUpperBound(0) = matriz.GetUpperBound(1) Then
             Console.WriteLine("La matriz es cuadrada. ")
             Console.ForegroundColor = ConsoleColor.Red

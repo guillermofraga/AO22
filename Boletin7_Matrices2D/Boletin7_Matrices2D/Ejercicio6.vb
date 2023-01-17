@@ -15,7 +15,7 @@
         Next
 
         For i = 0 To matriz.GetUpperBound(1)
-            suma += matriz(matriz.GetLowerBound(0), i)
+            suma += matriz(0, i)
         Next
 
         Console.WriteLine("")

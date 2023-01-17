@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66B8CB68-E6AC-4E7B-894B-F07D2CD4D10B}</ProjectGuid>
+    <ProjectGuid>{687B2082-AE65-4A56-9F75-391322FD8AC7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Boletin7_Matrices2D.Ejercicio9</StartupObject>
-    <RootNamespace>Boletin7_Matrices2D</RootNamespace>
-    <AssemblyName>Boletin7_Matrices2D</AssemblyName>
+    <StartupObject>Boletin7_arrays2d.FragaQuirogaGuillermo</StartupObject>
+    <RootNamespace>Boletin7_arrays2d</RootNamespace>
+    <AssemblyName>Boletin7_arrays2d</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Boletin7_Matrices2D.xml</DocumentationFile>
+    <DocumentationFile>Boletin7_arrays2d.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -34,7 +34,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Boletin7_Matrices2D.xml</DocumentationFile>
+    <DocumentationFile>Boletin7_arrays2d.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -73,23 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ejercicio1.vb" />
-    <Compile Include="Ejercicio10.vb" />
-    <Compile Include="Ejercicio11.vb" />
-    <Compile Include="Ejercicio12.vb" />
-    <Compile Include="Ejercicio13.vb" />
-    <Compile Include="Ejercicio14.vb" />
-    <Compile Include="Ejercicio15.vb" />
-    <Compile Include="Ejercicio16.vb" />
-    <Compile Include="Ejercicio2.vb" />
-    <Compile Include="Ejercicio4.vb" />
-    <Compile Include="Ejercicio3.vb" />
-    <Compile Include="Ejercicio5.vb" />
-    <Compile Include="Ejercicio6.vb" />
-    <Compile Include="Ejercicio7.vb" />
-    <Compile Include="Ejercicio8.vb" />
-    <Compile Include="Ejercicio9.vb" />
-    <Compile Include="Funciones.vb" />
+    <Compile Include="FragaQuirogaGuillermo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

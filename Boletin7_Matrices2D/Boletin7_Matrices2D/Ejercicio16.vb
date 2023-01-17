@@ -41,54 +41,74 @@
 
         Console.WriteLine("")
 
-        Console.WriteLine("Si quiere comenzar pulse 1, si quiere finalizar pulse 0")
-            salir = Convert.ToInt32(Console.ReadLine())
-            Do
+        Console.WriteLine(pf1 & " " & pc1 & " " & pf2 & " " & pc2 & " " & pf3 & " " & pc3)
 
-                Console.WriteLine("Introduzca la cordenada de fila donde esta el 0: ")
-                pf = Convert.ToInt32(Console.ReadLine())
-                Console.WriteLine("Introduzca la cordenada de la columna donde esta el 0: ")
-                pc = Convert.ToInt32(Console.ReadLine())
+        Do
 
-                If pf1 = pf And pc1 = pc Then
-                    contador -= 1
-                    Console.WriteLine("Hacertaste una posicion te quedan: " & contador & " posiciones para encontrar")
-                End If
+            Console.WriteLine("Introduzca la cordenada de fila donde esta el 0: ")
+            pf = Convert.ToInt32(Console.ReadLine())
+            Console.WriteLine("Introduzca la cordenada de la columna donde esta el 0: ")
+            pc = Convert.ToInt32(Console.ReadLine())
 
-                If pf2 = pf And pc2 = pc Then
-                    contador -= 1
-                    Console.WriteLine("Hacertaste una posicion te quedan: " & contador & " posiciones para encontrar")
-                End If
+            If pf1 = pf And pc1 = pc Then
+                contador -= 1
+                Console.WriteLine("Hacertaste una posicion te quedan: " & contador & " posiciones para encontrar")
+            End If
 
-                If pf3 = pf And pc3 = pc Then
-                    contador -= 1
-                    Console.WriteLine("Hacertaste una posicion te quedan: " & contador & " posiciones para encontrar")
-                End If
+            If pf2 = pf And pc2 = pc Then
+                contador -= 1
+                Console.WriteLine("Hacertaste una posicion te quedan: " & contador & " posiciones para encontrar")
+            End If
 
-                If pf1 <> pf And pc1 <> pc Then
-                    vida -= 1
-                    Console.WriteLine("has fallado te quedan: " & vida & " vidas")
-                ElseIf pf2 <> pf And pc2 <> pc2 Then
-                    vida -= 1
-                    Console.WriteLine("has fallado te quedan: " & vida & " vidas")
-                ElseIf pf3 <> pf And pc3 <> pc3 Then
-                    vida -= 1
-                    Console.WriteLine("has fallado te quedan: " & vida & " vidas")
-                End If
+            If pf3 = pf And pc3 = pc Then
+                contador -= 1
+                Console.WriteLine("Hacertaste una posicion te quedan: " & contador & " posiciones para encontrar")
+            End If
 
-                If vida = 0 Then
-                    Console.ForegroundColor = ConsoleColor.Red
-                    Console.WriteLine("GAME OVER")
-                    Console.ResetColor()
-                End If
+            If matriz(pf, pc) <> 0 Then
+                vida -= 1
+                Console.WriteLine("has fallado te quedan: " & vida & " vidas")
+            End If
 
-            Loop While vida <> 0 Or contador = 0
+            Console.WriteLine("")
+
+            If contador = 0 Then
+                Console.ForegroundColor = ConsoleColor.Blue
+                Console.WriteLine("YOU WIN")
+                Console.ResetColor()
+                Exit Do
+            End If
+
+            If vida = 0 Then
+                Console.ForegroundColor = ConsoleColor.Red
+                Console.WriteLine("GAME OVER")
+                Console.ResetColor()
+                Exit Do
+            End If
+
+        Loop While vida > 0
 
 
 
         Console.WriteLine("")
 
-        mostrarMatriz(matriz)
+
+        Console.WriteLine("Posicion de los ceros: ")
+
+        Console.WriteLine("")
+        For a = 0 To matriz.GetUpperBound(0)
+            For b = 0 To matriz.GetUpperBound(1)
+                If matriz(a, b) = 0 Then
+                    Console.ForegroundColor = ConsoleColor.Green
+                    Console.Write(matriz(a, b) & " ")
+                    Console.ResetColor()
+                Else
+                    Console.Write(matriz(a, b) & " ")
+                End If
+            Next
+            Console.WriteLine("")
+            Console.WriteLine("-----------")
+        Next
 
         Console.ReadLine()
 
