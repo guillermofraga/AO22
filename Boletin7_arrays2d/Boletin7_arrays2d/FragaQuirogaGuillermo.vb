@@ -462,21 +462,36 @@
 
             Case 13
 
-                Dim matriz(3, 3) As Integer
+                Dim matriz(3, 3), contador As Integer
+                Dim superior, inferior As Boolean
+                superior = True
+                inferior = True
 
-                generarmatriz2D(matriz, 0, 5)
+                generarmatriz2D(matriz, 0, 0)
 
                 mostrarMatriz(matriz)
 
+                For i = 0 To matriz.GetUpperBound(0)
+                    For j = 0 To matriz.GetUpperBound(1)
+                        If i < j Then
+                            If matriz(i, j) <> 0 Then
+                                inferior = False
+                            End If
+                        ElseIf i > j Then
+                            If matriz(i, j) <> 0 Then
+                                superior = False
+                            End If
+                        End If
+                    Next
+                Next
 
-                If matriz(0, 1) = 0 And matriz(0, 2) = 0 And matriz(0, 3) = 0 And matriz(1, 2) = 0 And matriz(1, 3) = 0 And matriz(2, 3) = 0 Then
-                    Console.WriteLine("Matriz triangular inferior. ")
+                If inferior Then
+                    Console.WriteLine("Matriz triangular inferior")
                 End If
 
-                If matriz(1, 0) = 0 And matriz(2, 0) = 0 And matriz(2, 1) = 0 And matriz(3, 0) = 0 And matriz(3, 1) = 0 And matriz(3, 2) = 0 Then
-                    Console.WriteLine("Matriz triangular superior. ")
+                If superior Then
+                    Console.WriteLine("Matriz triangular superior")
                 End If
-
 
 
             Case 14
