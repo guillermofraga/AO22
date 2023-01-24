@@ -57,17 +57,15 @@
 
                 Dim DNI As String
                 Dim contador As Integer
-                Dim suma As Double
+                Dim n As Integer
 
                 Console.WriteLine("Introduzca su DNI: ")
                 DNI = Console.ReadLine()
 
 
-
                 For a = 0 To 7
                     If Char.IsDigit(DNI(a)) Then
                         contador += 1
-                        suma += Convert.ToDouble(DNI(a))
                     Else
                         Exit For
                     End If
@@ -76,11 +74,17 @@
                 If contador <> 8 Then
                     Console.WriteLine("Su número de DNI es incorrecto")
                 Else
-                    suma = suma Mod 23
+                    Console.WriteLine("Su número de DNI es correcto")
+                    n = CInt(DNI.Substring(0, 8))
                 End If
-
+                n = n Mod 23
                 Dim letra() As Char = {"T"c, "R"c, "W"c, "A"c, "G"c, "M"c, "Y"c, "F"c, "P"c, "D"c, "X"c, "B"c, "N"c, "J"c, "Z"c, "S"c, "Q"c, "V"c, "H"c, "L"c, "C"c, "K"c, "E"c}
 
+                If Char.IsLetter(DNI(DNI.Length - 1)) And DNI(DNI.Length - 1) = letra(n) Then
+                    Console.WriteLine("Su letra del DNI es correcta")
+                Else
+                    Console.WriteLine("No introdujo ninguna letra o su letra no coincide con su numero de DNI")
+                End If
 
 
                 If Char.IsLetter(DNI(DNI.Length - 1)) And contador = 8 Then
@@ -91,33 +95,62 @@
 
 
 
-
-
-
-
-                Console.ReadLine()
-
             Case 3
 
+                Dim escribir As String
 
+                Console.WriteLine("Escribe: ")
+                escribir = Console.ReadLine()
 
+                Dim palabras() As String = escribir.Split(" "c)
 
-
-
+                For i = 0 To palabras.Length - 1
+                    If palabras(i).StartsWith("b"c) Then
+                        Console.WriteLine("Palabra que empieza por b: " & palabras(i))
+                    End If
+                Next
 
             Case 4
 
+                Dim correo As String
 
+                Console.WriteLine("Introduzca su correo electronico: ")
+                correo = Console.ReadLine()
 
-
+                If correo.Contains("@"c) Then
+                    Console.WriteLine("Introdujo bien su correo")
+                Else
+                    Console.WriteLine("Introdujo mal su correo")
+                End If
 
 
 
             Case 5
 
+                Dim texto, texto2 As String
+                Dim cont As Integer
 
+                Console.WriteLine("Escribe: ")
+                texto = Console.ReadLine()
 
+                Dim palabras() As String = texto.Split(" "c)
 
+                For i = 0 To palabras.Length - 1
+                    If palabras(i).Contains("aba") Then
+                        cont += 1
+                    End If
+                Next
+
+                Console.WriteLine("El string contiene: " & cont & " palabras")
+
+                Console.WriteLine("Introduzca letras a buscar: ")
+                texto2 = Console.ReadLine()
+
+                For a = 0 To palabras.Length - 1
+                    If palabras(a).Contains(texto2) Then
+                        Console.WriteLine("La palabra que contiene " & texto2 & " es: " & palabras(a))
+                    End If
+                Next
 
             Case 6
 
