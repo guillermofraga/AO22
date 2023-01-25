@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{710BDDC3-EF97-41FB-9046-14C442FFD210}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Tema_String.Module1</StartupObject>
+    <StartupObject>Tema_String.Module2</StartupObject>
     <RootNamespace>Tema_String</RootNamespace>
     <AssemblyName>Tema_String</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

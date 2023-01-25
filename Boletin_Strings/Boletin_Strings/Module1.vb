@@ -154,24 +154,57 @@
 
             Case 6
 
+                Dim correo As String
+                Dim posicion As Integer
 
+                Console.WriteLine("Introduzca su correo electronico: ")
+                correo = Console.ReadLine()
 
+                Dim dominio As String
+                posicion = correo.LastIndexOf("@"c)
+                posicion += 1
+                dominio = correo.Substring(posicion)
 
-
-
-
+                Console.WriteLine("El dominio de su correo es: " & dominio)
 
             Case 7
 
+                Dim codigo As String
+                Dim contador As Integer
 
+                Console.WriteLine("Introduzca el codigo con este formato AA00: ")
+                codigo = Console.ReadLine()
 
+                For i = 0 To codigo.Length - 1
+                    If Char.IsLetter(codigo(i)) And contador <= 2 Then
+                        contador += 1
+                    End If
+                    If Char.IsDigit(codigo(i)) And contador >= 2 Then
+                        contador += 1
+                    End If
+                Next
 
+                If contador = 4 Then
+                    Console.WriteLine("introdujo bien el formato")
+                Else
+                    Console.WriteLine("introdujo mal el formato")
+                End If
 
 
             Case 8
 
+                Dim texto As String
 
+                Console.WriteLine("Escribe: ")
+                texto = Console.ReadLine()
 
+                Dim a() As String = texto.Split(" "c)
+
+                For i = 0 To texto.Length - 1
+                    If texto.IndexOf(" "c) = i Then
+
+                    End If
+                Next
 
 
 
