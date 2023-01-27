@@ -200,19 +200,42 @@
 
                 Dim a() As String = texto.Split(" "c)
 
-                For i = 0 To texto.Length - 1
-                    If texto.IndexOf(" "c) = i Then
-
-                    End If
+                For i = 0 To a.Length - 1
+                    Console.Write(a(i) & "*")
                 Next
-
 
 
             Case 9
 
+                Dim nombres(1), salario2(1), nombre(1) As String
+                Dim salario(1) As Integer
 
+                nombres(0) = "Pedro Jimenez*14Julio1990?2500"
+                nombres(1) = "Maria Benitez*9070!06Agosto1998"
 
+                salario(0) = nombres(0).LastIndexOf("?")
+                salario(1) = nombres(1).LastIndexOf("*")
 
+                For i = 0 To nombres.Length - 1
+                    If salario(i) = nombres(i).LastIndexOf("?") Then
+                        nombre(i) = nombres(i).Substring(0, 13)
+                        salario2(i) = nombres(i).Substring(salario(i) + 1, 4)
+                    End If
+
+                    If salario(i) = nombres(i).LastIndexOf("*") Then
+                        nombre(i) = nombres(i).Substring(0, 13)
+                        salario2(i) = nombres(i).Substring(salario(i) + 1, 4)
+                    End If
+                Next
+
+                Console.WriteLine(salario2(0))
+                Console.WriteLine(salario2(1))
+
+                For a = 0 To salario2.Length - 1
+                    If salario2(a) > "1000" Then
+                        Console.WriteLine("El salario de:" & nombre(a) & " supera los 1000 euros")
+                    End If
+                Next
 
 
 
