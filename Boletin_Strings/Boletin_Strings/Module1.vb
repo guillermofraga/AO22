@@ -1,16 +1,18 @@
-﻿Module Module1
+﻿Imports System.IO
+Module Module1
     Sub Main()
 
 
         Dim seleccionar As Integer
 
-        Console.WriteLine("Introduzca un número del 0 al 15 para seleccionar el ejercicio: ")
+        Console.WriteLine("Introduzca un número del 1 al 16 para seleccionar el ejercicio: ")
         seleccionar = Convert.ToInt32(Console.ReadLine())
 
         Select Case seleccionar
-            Case 0
+            Case 1
                 Dim matricula() As String = {"2412-ABZ", "9512-GER", "4342-OPW", "1520-PÑA", "7148-IAL", "9872-LÑB", "7420-MAZ", "8621-ÑZM", "1041-BUI", "1032-QDD"}
                 Dim c As Char = "Z"c
+                Dim ruta As String = Directory.GetCurrentDirectory() + "\Matriculas.txt"
 
                 For i = 0 To matricula.Length - 1
                     If matricula(i).EndsWith(c) Then
@@ -34,7 +36,16 @@
                     Console.WriteLine(letra)
                 Next
 
-            Case 1
+                Dim guardar As New StreamWriter(ruta, False)
+
+                For p = 0 To matricula.Length - 1
+                    guardar.WriteLine(matricula(p))
+                Next
+
+                guardar.Close()
+
+
+            Case 2
 
                 Dim palabra As String = "hola"
                 Dim letra As Char
@@ -53,7 +64,7 @@
 
 
 
-            Case 2
+            Case 3
 
                 Dim DNI As String
                 Dim contador As Integer
@@ -95,7 +106,7 @@
 
 
 
-            Case 3
+            Case 4
 
                 Dim escribir As String
 
@@ -110,7 +121,7 @@
                     End If
                 Next
 
-            Case 4
+            Case 5
 
                 Dim correo As String
 
@@ -125,7 +136,7 @@
 
 
 
-            Case 5
+            Case 6
 
                 Dim texto, texto2 As String
                 Dim cont As Integer
@@ -152,7 +163,7 @@
                     End If
                 Next
 
-            Case 6
+            Case 7
 
                 Dim correo As String
                 Dim posicion As Integer
@@ -167,7 +178,7 @@
 
                 Console.WriteLine("El dominio de su correo es: " & dominio)
 
-            Case 7
+            Case 8
 
                 Dim codigo As String
                 Dim contador As Integer
@@ -191,21 +202,26 @@
                 End If
 
 
-            Case 8
+            Case 9
 
                 Dim texto As String
 
                 Console.WriteLine("Escribe: ")
                 texto = Console.ReadLine()
 
-                Dim a() As String = texto.Split(" "c)
+                Dim b() As Char = texto.ToCharArray()
 
-                For i = 0 To a.Length - 1
-                    Console.Write(a(i) & "*")
+                For i = 0 To b.Length - 1
+                    If b(i) = " "c Then
+                        b(i) = "*"c
+                    End If
                 Next
 
+                For p = 0 To b.Length - 1
+                    Console.Write(b(p))
+                Next
 
-            Case 9
+            Case 10
 
                 Dim nombres(1), salario2(1), nombre(1) As String
                 Dim salario(1) As Integer
@@ -239,19 +255,233 @@
 
 
 
-            Case 10
-
-
-
-
-
-
-
             Case 11
 
+                Dim palabra, muñeco(8, 8) As String
+                Dim n(6), intentos, contador As Integer
+                Dim alet As New Random
+                Dim letra As Char
+
+                intentos = 6
+                palabra = "asdfa"
+
+                For a = 0 To n.Length - 1
+                    n(a) = alet.Next(65, 90)
+                Next
+
+                Dim arraycaracteres() As Char = palabra.ToCharArray()
+
+                For x = 0 To arraycaracteres.Length - 1
+                    If arraycaracteres(x) = arraycaracteres(x) Then
+                        arraycaracteres(x) = Chr(n(x))
+                    End If
+                Next
+
+                For ñ = 0 To arraycaracteres.Length - 1
+                    Console.Write(arraycaracteres(ñ))
+                Next
+
+                Console.WriteLine("")
+
+                Console.WriteLine("")
+
+                Do
+
+                    Console.WriteLine("Introduzca una letra en Mayuscula")
+                    letra = Convert.ToChar(Console.ReadLine())
+
+                    For m = 0 To arraycaracteres.Length - 1
+                        If arraycaracteres(m) = letra Then
+                            Console.WriteLine("Acertaste una letra")
+                            contador += 1
+                        End If
+                    Next
+
+                    If contador = 0 Then
+                        Console.WriteLine("Fallaste una letra")
+                        intentos -= 1
+                    End If
+
+                    If intentos = 5 Then
+                        For ñ = 0 To muñeco.GetUpperBound(0)
+                            For z = 0 To muñeco.GetUpperBound(1)
+                                If ñ = 2 And z = 4 Then
+                                    muñeco(2, 4) = "O"
+                                ElseIf ñ = 3 And z = 4 Then
+                                    muñeco(3, 4) = "|"
+                                ElseIf ñ = 3 And z = 3 Then
+                                    muñeco(3, 3) = "/"
+                                ElseIf ñ = 3 And z = 5 Then
+                                    muñeco(3, 5) = "\"
+                                ElseIf ñ = 4 And z = 3 Then
+                                    muñeco(4, 3) = "/"
+                                ElseIf ñ = 4 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 5) = "\"
+                                Else
+                                    muñeco(ñ, z) = "."
+                                End If
+                                Console.Write(muñeco(ñ, z))
+                                Console.ResetColor()
+                            Next
+                            Console.WriteLine("")
+                        Next
+                    End If
+
+                    If intentos = 4 Then
+                        For ñ = 0 To muñeco.GetUpperBound(0)
+                            For z = 0 To muñeco.GetUpperBound(1)
+                                If ñ = 2 And z = 4 Then
+                                    muñeco(2, 4) = "O"
+                                ElseIf ñ = 3 And z = 4 Then
+                                    muñeco(3, 4) = "|"
+                                ElseIf ñ = 3 And z = 3 Then
+                                    muñeco(3, 3) = "/"
+                                ElseIf ñ = 3 And z = 5 Then
+                                    muñeco(3, 5) = "\"
+                                ElseIf ñ = 4 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 3) = "/"
+                                ElseIf ñ = 4 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 5) = "\"
+                                Else
+                                    muñeco(ñ, z) = "."
+                                End If
+                                Console.Write(muñeco(ñ, z))
+                                Console.ResetColor()
+                            Next
+                            Console.WriteLine("")
+                        Next
+                    End If
+
+                    If intentos = 3 Then
+                        For ñ = 0 To muñeco.GetUpperBound(0)
+                            For z = 0 To muñeco.GetUpperBound(1)
+                                If ñ = 2 And z = 4 Then
+                                    muñeco(2, 4) = "O"
+                                ElseIf ñ = 3 And z = 4 Then
+                                    muñeco(3, 4) = "|"
+                                ElseIf ñ = 3 And z = 3 Then
+                                    muñeco(3, 3) = "/"
+                                ElseIf ñ = 3 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 5) = "\"
+                                ElseIf ñ = 4 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 3) = "/"
+                                ElseIf ñ = 4 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 5) = "\"
+                                Else
+                                    muñeco(ñ, z) = "."
+                                End If
+                                Console.Write(muñeco(ñ, z))
+                                Console.ResetColor()
+                            Next
+                            Console.WriteLine("")
+                        Next
+                    End If
+
+                    If intentos = 2 Then
+                        For ñ = 0 To muñeco.GetUpperBound(0)
+                            For z = 0 To muñeco.GetUpperBound(1)
+                                If ñ = 2 And z = 4 Then
+                                    muñeco(2, 4) = "O"
+                                ElseIf ñ = 3 And z = 4 Then
+                                    muñeco(3, 4) = "|"
+                                ElseIf ñ = 3 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 3) = "/"
+                                ElseIf ñ = 3 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 5) = "\"
+                                ElseIf ñ = 4 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 3) = "/"
+                                ElseIf ñ = 4 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 5) = "\"
+                                Else
+                                    muñeco(ñ, z) = "."
+                                End If
+                                Console.Write(muñeco(ñ, z))
+                                Console.ResetColor()
+                            Next
+                            Console.WriteLine("")
+                        Next
+                    End If
+
+                    If intentos = 1 Then
+                        For ñ = 0 To muñeco.GetUpperBound(0)
+                            For z = 0 To muñeco.GetUpperBound(1)
+                                If ñ = 2 And z = 4 Then
+                                    muñeco(2, 4) = "O"
+                                ElseIf ñ = 3 And z = 4 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 4) = "|"
+                                ElseIf ñ = 3 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 3) = "/"
+                                ElseIf ñ = 3 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 5) = "\"
+                                ElseIf ñ = 4 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 3) = "/"
+                                ElseIf ñ = 4 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 5) = "\"
+                                Else
+                                    muñeco(ñ, z) = "."
+                                End If
+                                Console.Write(muñeco(ñ, z))
+                                Console.ResetColor()
+                            Next
+                            Console.WriteLine("")
+                        Next
+                    End If
+
+                    If intentos = 0 Then
+                        For ñ = 0 To muñeco.GetUpperBound(0)
+                            For z = 0 To muñeco.GetUpperBound(1)
+                                If ñ = 2 And z = 4 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(2, 4) = "O"
+                                ElseIf ñ = 3 And z = 4 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 4) = "|"
+                                ElseIf ñ = 3 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 3) = "/"
+                                ElseIf ñ = 3 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(3, 5) = "\"
+                                ElseIf ñ = 4 And z = 3 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 3) = "/"
+                                ElseIf ñ = 4 And z = 5 Then
+                                    Console.ForegroundColor = ConsoleColor.Red
+                                    muñeco(4, 5) = "\"
+                                Else
+                                    muñeco(ñ, z) = "."
+                                End If
+                                Console.Write(muñeco(ñ, z))
+                                Console.ResetColor()
+                            Next
+                            Console.WriteLine("")
+                        Next
+                        Exit Do
+                    End If
+
+                Loop While intentos > 0 Or contador <= 5
 
 
-
+                If contador <> 5 Or intentos <= 0 Then
+                    Console.ForegroundColor = ConsoleColor.Red
+                    Console.WriteLine("YOU LOSE")
+                    Console.ResetColor()
+                End If
 
 
 
@@ -264,10 +494,8 @@
 
 
 
+
             Case 13
-
-
-
 
 
 
@@ -285,7 +513,18 @@
 
 
 
+
             Case 15
+
+
+
+
+
+
+
+
+
+            Case 16
 
 
 
