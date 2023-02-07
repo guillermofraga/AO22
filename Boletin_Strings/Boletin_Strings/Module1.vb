@@ -2,7 +2,6 @@
 Module Module1
     Sub Main()
 
-
         Dim seleccionar As Integer
 
         Console.WriteLine("Introduzca un número del 1 al 16 para seleccionar el ejercicio: ")
@@ -66,15 +65,34 @@ Module Module1
 
             Case 3
 
+                'Volcar los datos del fichero accesos a una matriz de String
+                Dim accesos(99) As String
+                Dim lector As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\accesos.txt")
+                Dim posicion As Integer = 0
+                While Not lector.EndOfStream
+                    accesos(posicion) = lector.ReadLine()
+                    posicion += 1
+                End While
+                lector.Close()
+
+
+
+
+
                 Dim DNI As String
                 Dim contador As Integer
                 Dim n As Integer
+                Dim mistake As Boolean = False
 
                 Console.WriteLine("Introduzca su DNI: ")
                 DNI = Console.ReadLine()
 
+                If DNI.Length <> 9 Then
+                    mistake = True
+                    Console.WriteLine("Error en el formato, no hay 9 caracteres")
+                End If
 
-                For a = 0 To 7
+                For a = 0 To DNI.Length - 1
                     If Char.IsDigit(DNI(a)) Then
                         contador += 1
                     Else
@@ -91,14 +109,34 @@ Module Module1
                 n = n Mod 23
                 Dim letra() As Char = {"T"c, "R"c, "W"c, "A"c, "G"c, "M"c, "Y"c, "F"c, "P"c, "D"c, "X"c, "B"c, "N"c, "J"c, "Z"c, "S"c, "Q"c, "V"c, "H"c, "L"c, "C"c, "K"c, "E"c}
 
-                If Char.IsLetter(DNI(DNI.Length - 1)) And DNI(DNI.Length - 1) = letra(n) Then
+                If Char.IsLetter(DNI(8)) And DNI(8) = letra(n) Then
                     Console.WriteLine("Su letra del DNI es correcta")
+                    'Buscar si ya está en el fichero de accesos
+                    'Contamos número de accesos
+                    Dim contadoraccesos As Integer
+                    For Each acceso As String In accesos
+                        If acceso Is Nothing Then
+                            Exit For
+                        End If
+                        If DNI = acceso.Split("*"c)(0) Then
+                            If Date.Today.ToShortDateString = acceso.Split("*"c)(1).Split(" "c)(0) Then
+                                contadoraccesos += 1
+                            End If
+
+                        End If
+                    Next
+                    Console.WriteLine("Ha accedido: " & contadoraccesos & " veces")
+
+
+                    Dim escritorDNI As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\accesos.txt", True)
+                    escritorDNI.WriteLine(DNI + "*" + Date.Now.ToString)
+                    escritorDNI.Close()
                 Else
                     Console.WriteLine("No introdujo ninguna letra o su letra no coincide con su numero de DNI")
                 End If
 
 
-                If Char.IsLetter(DNI(DNI.Length - 1)) And contador = 8 Then
+                If Char.IsLetter(DNI(8)) And contador = 8 And DNI(8) = letra(n) Then
                     Console.WriteLine("Su DNI es correcto")
                 Else
                     Console.WriteLine("Introdujo mal su DNI")
@@ -167,14 +205,16 @@ Module Module1
 
                 Dim correo As String
                 Dim posicion As Integer
+                Dim ultimaposicion As Integer
 
                 Console.WriteLine("Introduzca su correo electronico: ")
                 correo = Console.ReadLine()
 
                 Dim dominio As String
-                posicion = correo.LastIndexOf("@"c)
-                posicion += 1
-                dominio = correo.Substring(posicion)
+                posicion = correo.LastIndexOf("@")
+                ultimaposicion = correo.LastIndexOf(".")
+                dominio = correo.Substring(posicion + 1, ultimaposicion - posicion - 1)
+
 
                 Console.WriteLine("El dominio de su correo es: " & dominio)
 
@@ -258,7 +298,7 @@ Module Module1
             Case 11
 
                 Dim palabra, muñeco(8, 8) As String
-                Dim n(6), intentos, contador As Integer
+                Dim n(6), intentos, contador, contadorfallo As Integer
                 Dim alet As New Random
                 Dim letra As Char
 
@@ -290,14 +330,18 @@ Module Module1
                     Console.WriteLine("Introduzca una letra en Mayuscula")
                     letra = Convert.ToChar(Console.ReadLine())
 
+                    contadorfallo = 0
+
                     For m = 0 To arraycaracteres.Length - 1
                         If arraycaracteres(m) = letra Then
                             Console.WriteLine("Acertaste una letra")
                             contador += 1
+                        Else
+                            contadorfallo += 1
                         End If
                     Next
 
-                    If contador = 0 Then
+                    If contadorfallo = arraycaracteres.Length Then
                         Console.WriteLine("Fallaste una letra")
                         intentos -= 1
                     End If
@@ -474,7 +518,7 @@ Module Module1
                         Exit Do
                     End If
 
-                Loop While intentos > 0 Or contador <= 5
+                Loop While contador < 5
 
 
                 If contador <> 5 Or intentos <= 0 Then
@@ -483,53 +527,200 @@ Module Module1
                     Console.ResetColor()
                 End If
 
+                If contador = 5 Then
+                    Console.ForegroundColor = ConsoleColor.Green
+                    Console.WriteLine("YOU WIN")
+                    Console.ResetColor()
+                End If
+
 
 
 
             Case 12
 
+                Dim texto() As String = {"Hello", "Good afternoon"}
+                Dim ruta As String = Directory.GetCurrentDirectory() + "\Texto.txt"
+                Dim save As New StreamWriter(ruta, False)
+                Dim posicion As Integer
+                posicion = 0
 
+                For i = 0 To texto.Length - 1
+                    save.WriteLine(texto(i))
+                Next
 
+                save.Close()
 
+                Dim read As New StreamReader(ruta)
 
+                While Not read.EndOfStream
+                    texto(posicion) = read.ReadLine()
+                    posicion += 1
+                End While
 
-
+                For Each Text As String In texto
+                    Console.WriteLine(Text)
+                Next
 
             Case 13
 
+                Dim leer As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\Texto.txt")
+                Dim texto(10) As String
+                Dim i As Integer = 0
 
+                While Not leer.EndOfStream
+                    texto(i) = leer.ReadLine()
+                    i += 1
+                End While
 
-
+                For a = 0 To texto.Length - 1
+                    If texto(a) Is Nothing Then
+                        Exit For
+                    End If
+                    Console.WriteLine(texto(a))
+                Next
 
 
 
             Case 14
 
+                Dim file As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\Texto.txt", True)
+                file.WriteLine("Good night")
+
+                file.Close()
+
+                Dim leer As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\Texto.txt")
+                Dim texto(10) As String
+                Dim i As Integer = 0
 
 
+                While Not leer.EndOfStream
+                    texto(i) = leer.ReadLine()
+                    i += 1
+                End While
 
-
-
-
-
-
+                For a = 0 To texto.Length - 1
+                    Console.WriteLine(texto(a))
+                Next
 
             Case 15
 
+                Dim file1 As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\file1.txt", True)
+                Dim file2 As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\file2.txt", True)
+                Dim file3 As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\file1_file2.txt", True)
+                Dim escribir As String
 
+                Console.WriteLine("Introduzca datos para el fichero1:")
+                escribir = Console.ReadLine()
 
+                file1.WriteLine(escribir)
+                file1.Close()
 
+                Console.WriteLine("Introduzca datos para el fichero2:")
+                escribir = Console.ReadLine()
 
+                file2.WriteLine(escribir)
+                file2.Close()
+                Dim fileread1 As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\file1.txt")
+                Dim fileread11(99) As String
+                Dim i As Integer = 0
 
+                While Not fileread1.EndOfStream
+                    fileread11(i) = fileread1.ReadLine()
+                    file3.WriteLine(fileread11(i))
+                    i += 1
+                End While
 
+                fileread1.Close()
+
+                Dim fileread2 As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\file2.txt")
+                Dim fileread22(99) As String
+                Dim a As Integer = 0
+
+                While Not fileread2.EndOfStream
+                    fileread22(a) = fileread2.ReadLine()
+                    file3.WriteLine(fileread22(a))
+                    a += 1
+                End While
+
+                fileread2.Close()
+
+                file3.Close()
 
 
             Case 16
 
+                Dim filedni As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\filedni.txt", True)
+                Dim DNI As String
+                Dim DNIordenado() As Char
+                Dim contador As Integer
+
+                Console.WriteLine("Introduzca su DNI nombre y apellidos edad y salario separado por espacios:")
+                DNI = Console.ReadLine()
+
+                DNIordenado = DNI.ToCharArray()
+
+                For i = 0 To DNIordenado.Length - 1
+                    If DNIordenado(i) = " "c And contador = 0 Then
+                        DNIordenado(i) = "*"c
+                        contador += 1
+                    End If
+                    If DNIordenado(i) = " "c And contador = 1 Then
+                        DNIordenado(i) = "?"c
+                    End If
+                Next
+
+                filedni.WriteLine(DNIordenado)
+                filedni.Close()
+
+                Dim opciones As Integer
+
+                Do
+
+                    Console.WriteLine("1. Mostrar registros")
+                    Console.WriteLine("2. Insertar nuevo registro")
+                    Console.WriteLine("3. Consultar por DNI")
+                    Console.WriteLine("4. Mostrar registros cuyo salario sea superior a 2500€")
+                    Console.WriteLine("5. Modificar registro: se pide el DNI y se modifica el salario a un nuevo valor Se actualiza la matriz y después se vuelca al fichero.")
+                    Console.WriteLine("6. Eliminar registro. A partir del DNI. (Se hará primero en la matriz y después en el fichero?")
+                    Console.WriteLine("7. Mostrar registros ordenador por salario de menor a mayor")
+                    Console.WriteLine("8. Gestionar historial con los cambios realizados sobre el fichero. Cada vez que haya un cambio se genera un fichero de copia con el estado anterior al cambio")
+                    Console.WriteLine("9. Salir")
+                    Console.WriteLine("Introduce lo que quieres hacer:")
+                    opciones = Convert.ToInt32(Console.ReadLine())
 
 
 
+                    Select Case opciones
+                        Case 1
 
+
+                        Case 2
+
+
+
+                        Case 3
+
+
+
+                        Case 4
+
+
+                        Case 5
+
+
+                        Case 6
+
+
+                        Case 7
+
+
+                        Case 8
+
+
+                    End Select
+
+
+                Loop While opciones <> 9
 
 
 
