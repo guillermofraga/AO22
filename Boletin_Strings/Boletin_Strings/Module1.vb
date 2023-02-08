@@ -744,8 +744,8 @@ Module Module1
                         Case 3
 
                             Dim ruta As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\filedni.txt")
-                            Dim texto(99) As String
-                            Dim i, a As Integer
+                            Dim texto(99), DNI1(99) As String
+                            Dim i, a, posicion As Integer
                             Dim dnibuscar As String
                             i = 0
                             a = 0
@@ -764,11 +764,18 @@ Module Module1
 
                             For b = 0 To texto.Length - 1
                                 If texto(b) <> "" Then
-                                    Console.WriteLine(texto(b))
+                                    posicion = texto(b).LastIndexOf("*"c)
+                                    DNI1(b) = texto(b).Substring(0, posicion - 1)
                                 End If
                             Next
 
-
+                            For b = 0 To texto.Length - 1
+                                If texto(b) <> "" Then
+                                    If DNI(b) = dnibuscar Then
+                                        Console.WriteLine(texto(b))
+                                    End If
+                                End If
+                            Next
 
                             ruta.Close()
 
