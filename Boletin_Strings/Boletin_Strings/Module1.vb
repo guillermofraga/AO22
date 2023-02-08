@@ -692,29 +692,104 @@ Module Module1
 
                     Select Case opciones
                         Case 1
+                            Dim ruta As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\filedni.txt")
+                            Dim texto(99) As String
+                            Dim i As Integer = 0
 
+                            For a = 0 To texto.Length - 1
+                                texto(a) = ""
+                            Next
+
+                            While Not ruta.EndOfStream
+                                texto(i) = ruta.ReadLine()
+                                i += 1
+                            End While
+
+                            For b = 0 To texto.Length - 1
+                                If texto(b) <> "" Then
+                                    Console.WriteLine(texto(b))
+                                End If
+                            Next
+
+                            ruta.Close()
 
                         Case 2
 
+                            Dim nuevoregistro As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\filedni.txt", True)
+                            Dim escribe As String
+                            Dim contador1 As Integer = 0
+                            Dim DNI1() As Char
 
+                            escribe = ""
+
+                            Console.WriteLine("Introduzca su DNI nombre y apellidos edad y salario separado por espacios:")
+                            escribe = Console.ReadLine()
+
+                            DNI1 = escribe.ToCharArray()
+
+                            For i = 0 To DNIordenado.Length - 1
+                                If DNI1(i) = " "c And contador = 0 Then
+                                    DNI1(i) = "*"c
+                                    contador += 1
+                                End If
+                                If DNI1(i) = " "c And contador = 1 Then
+                                    DNI1(i) = "?"c
+                                End If
+                            Next
+
+                            nuevoregistro.WriteLine(DNI1)
+
+                            nuevoregistro.Close()
 
                         Case 3
 
+                            Dim ruta As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\filedni.txt")
+                            Dim texto(99) As String
+                            Dim i, a As Integer
+                            Dim dnibuscar As String
+                            i = 0
+                            a = 0
 
+                            Console.WriteLine("Introduzca su DNI para buscar su registro:")
+                            dnibuscar = Console.ReadLine
+
+                            For a = 0 To texto.Length - 1
+                                texto(a) = ""
+                            Next
+
+                            While Not ruta.EndOfStream
+                                texto(i) = ruta.ReadLine()
+                                i += 1
+                            End While
+
+                            For b = 0 To texto.Length - 1
+                                If texto(b) <> "" Then
+                                    Console.WriteLine(texto(b))
+                                End If
+                            Next
+
+
+
+                            ruta.Close()
 
                         Case 4
+
 
 
                         Case 5
 
 
+
                         Case 6
+
 
 
                         Case 7
 
 
+
                         Case 8
+
 
 
                     End Select
