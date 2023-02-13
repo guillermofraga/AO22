@@ -533,9 +533,6 @@ Module Module1
                     Console.ResetColor()
                 End If
 
-
-
-
             Case 12
 
                 Dim texto() As String = {"Hello", "Good afternoon"}
@@ -744,11 +741,10 @@ Module Module1
                         Case 3
 
                             Dim ruta As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\filedni.txt")
-                            Dim texto(99), DNI1(99) As String
-                            Dim i, a, posicion As Integer
+                            Dim texto(99) As String
+                            Dim i As Integer
                             Dim dnibuscar As String
                             i = 0
-                            a = 0
 
                             Console.WriteLine("Introduzca su DNI para buscar su registro:")
                             dnibuscar = Console.ReadLine
@@ -763,17 +759,8 @@ Module Module1
                             End While
 
                             For b = 0 To texto.Length - 1
-                                If texto(b) <> "" Then
-                                    posicion = texto(b).LastIndexOf("*"c)
-                                    DNI1(b) = texto(b).Substring(0, posicion - 1)
-                                End If
-                            Next
-
-                            For b = 0 To texto.Length - 1
-                                If texto(b) <> "" Then
-                                    If DNI(b) = dnibuscar Then
-                                        Console.WriteLine(texto(b))
-                                    End If
+                                If texto(b).Split("*"c)(0) = dnibuscar Then
+                                    Console.WriteLine(texto(b))
                                 End If
                             Next
 
@@ -781,10 +768,68 @@ Module Module1
 
                         Case 4
 
+                            Dim ruta As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\filedni.txt")
+                            Dim texto(99), Salario(99) As String
+                            Dim i As Integer
+                            i = 0
+
+                            For a = 0 To texto.Length - 1
+                                texto(a) = ""
+                            Next
+
+                            While Not ruta.EndOfStream
+                                texto(i) = ruta.ReadLine()
+                                i += 1
+                            End While
+
+                            For b = 0 To texto.Length - 1
+                                If texto(b) <> Nothing Then
+                                    If texto(b).Split("?"c)(2) >= "2500" Then
+                                        Console.WriteLine(texto(b))
+                                    End If
+                                End If
+                            Next
+
+                            ruta.Close()
 
 
                         Case 5
 
+                            Dim ruta As StreamReader = New StreamReader(Directory.GetCurrentDirectory() + "\filedni.txt")
+                            Dim texto(99), salario As String
+                            Dim i As Integer
+                            Dim dnibuscar As String
+                            i = 0
+
+                            Console.WriteLine("Introduzca su DNI para buscar su registro:")
+                            dnibuscar = Console.ReadLine
+
+                            For a = 0 To texto.Length - 1
+                                texto(a) = ""
+                            Next
+
+                            While Not ruta.EndOfStream
+                                texto(i) = ruta.ReadLine()
+                                i += 1
+                            End While
+
+                            Console.WriteLine("Introduzca el nuevo salario: ")
+                            salario = Console.ReadLine()
+
+                            For b = 0 To texto.Length - 1
+                                If texto(b).Split("*"c)(0) = dnibuscar Then
+                                    texto(b).Split("?"c)(2) = salario
+                                    Console.WriteLine(texto(b))
+                                End If
+                            Next
+
+
+
+
+
+
+
+                            ruta.Close()
 
 
                         Case 6
