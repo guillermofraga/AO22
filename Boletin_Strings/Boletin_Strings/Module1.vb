@@ -297,8 +297,8 @@ Module Module1
 
             Case 11
 
-                Dim palabra, muñeco(8, 8) As String
-                Dim n(6), intentos, contador, contadorfallo As Integer
+                Dim palabra, muñeco(8, 8), aciertos(4) As String
+                Dim n(6), intentos, contador, contadorfallo, posicion(4) As Integer
                 Dim alet As New Random
                 Dim letra As Char
 
@@ -336,10 +336,19 @@ Module Module1
                         If arraycaracteres(m) = letra Then
                             Console.WriteLine("Acertaste una letra")
                             contador += 1
+                            aciertos(m) = arraycaracteres(m)
                         Else
                             contadorfallo += 1
                         End If
                     Next
+
+                    For l = 0 To arraycaracteres.Length - 1
+                        If aciertos(l) = arraycaracteres(l) Then
+                            Console.Write(aciertos(l) & "/")
+                        End If
+                    Next
+
+                    Console.WriteLine("")
 
                     If contadorfallo = arraycaracteres.Length Then
                         Console.WriteLine("Fallaste una letra")
@@ -521,13 +530,13 @@ Module Module1
                 Loop While contador < 5
 
 
-                If contador <> 5 Or intentos <= 0 Then
+                If contador <= 0 Or intentos <= 0 Then
                     Console.ForegroundColor = ConsoleColor.Red
                     Console.WriteLine("YOU LOSE")
                     Console.ResetColor()
                 End If
 
-                If contador = 5 Then
+                If contador > 0 Then
                     Console.ForegroundColor = ConsoleColor.Green
                     Console.WriteLine("YOU WIN")
                     Console.ResetColor()
@@ -714,8 +723,10 @@ Module Module1
 
                             Dim nuevoregistro As StreamWriter = New StreamWriter(Directory.GetCurrentDirectory() + "\filedni.txt", True)
                             Dim escribe As String
-                            Dim contador1 As Integer = 0
+                            Dim contador1 As Integer
                             Dim DNI1() As Char
+
+                            contador1 = 0
 
                             escribe = ""
 
@@ -724,12 +735,12 @@ Module Module1
 
                             DNI1 = escribe.ToCharArray()
 
-                            For i = 0 To DNIordenado.Length - 1
-                                If DNI1(i) = " "c And contador = 0 Then
+                            For i = 0 To DNI1.Length - 1
+                                If DNI1(i) = " "c And contador1 = 0 Then
                                     DNI1(i) = "*"c
-                                    contador += 1
+                                    contador1 += 1
                                 End If
-                                If DNI1(i) = " "c And contador = 1 Then
+                                If DNI1(i) = " "c And contador1 = 1 Then
                                     DNI1(i) = "?"c
                                 End If
                             Next
@@ -813,13 +824,14 @@ Module Module1
                                 i += 1
                             End While
 
-                            Console.WriteLine("Introduzca el nuevo salario: ")
-                            salario = Console.ReadLine()
+
 
                             For b = 0 To texto.Length - 1
                                 If texto(b).Split("*"c)(0) = dnibuscar Then
-                                    texto(b).Split("?"c)(2) = salario
-                                    Console.WriteLine(texto(b))
+                                    Console.WriteLine("Introduzca el nuevo salario: ")
+                                    salario = Console.ReadLine()
+
+
                                 End If
                             Next
 
