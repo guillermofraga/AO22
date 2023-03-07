@@ -416,10 +416,9 @@ Module Module1
             Case 11
 
                 Dim lista As ArrayList = New ArrayList()
-                Dim listac As ArrayList = New ArrayList()
                 Dim aleat As New Random
                 Dim cont As Integer = 0
-                Dim suma, suma20 As Integer
+                Dim suma, suma20, contador As Integer
                 Dim media, porcentaje As Double
 
                 For i = 0 To 10
@@ -461,27 +460,185 @@ Module Module1
 
                 Console.WriteLine("El porcentaje de los números superiores a 20 es: " & porcentaje)
 
-                For i = 0 To lista.Count - 1
-                    listac.Add(lista(i))
+
+
+                lista.Sort()
+
+                Dim numeroanterior As Integer = 0
+
+                For Each numeroacomparar In lista
+                    If Convert.ToInt32(numeroacomparar) <> numeroanterior Then
+                        Dim contador1 As Integer = 0
+                        For Each numero As Integer In lista
+                            If numero = Convert.ToInt32(numeroacomparar) And numero <> numeroanterior Then
+                                contador1 += 1
+                            End If
+                        Next
+                    End If
+                    Console.WriteLine(numeroacomparar)
+                    numeroanterior += 1
                 Next
 
-
-                For i = 0 To lista.Count - 1
-
-                Next
 
 
             Case 12
 
+                Dim tarea As ArrayList = New ArrayList()
+                Dim tareacompletada As ArrayList = New ArrayList()
+                Dim seleccion As Integer
+
+                Do
+
+                    Console.WriteLine("Introduzca lo que quiere hacer: ")
+                    Console.WriteLine("1. introducir tarea")
+                    Console.WriteLine("2. completar tarea")
+                    Console.WriteLine("3. contar tarea")
+                    Console.WriteLine("4. mostrar tareas pendientes")
+                    Console.WriteLine("5. mostrar tareas completadas")
+                    Console.WriteLine("6. mostrar tareas cuya fecha de vencimiento es el dia de hoy")
+                    Console.WriteLine("7. Mostrar tareas más urgentes (prioridad > 8)")
+                    Console.WriteLine("8. salir")
+                    seleccion = Convert.ToInt32(Console.ReadLine())
+
+                    Select Case seleccion
+
+                        Case 1
+
+                            Dim addworkout As String
+
+                            Console.WriteLine("Nota: La prioridad es un número entre 1 y 10 , siendo 10 muy urgente y 1 nada urgente")
+
+                            Console.WriteLine("Introduzca la tarea con el siguiente formato Titulo*Prioridad*Fechavencimiento (mm-dd-yyyy):")
+                            addworkout = Console.ReadLine()
+
+                            tarea.Add(addworkout)
+
+                        Case 2
+
+                            Dim completedworkout As String
+
+                            Console.WriteLine("Introduzca la tarea que desea marcar como completado con el siguiente formato Titulo*Prioridad*Fecha (dd/mm/yyyy):")
+                            completedworkout = Console.ReadLine()
+
+                            tareacompletada.Add(completedworkout)
+
+                            tarea.Remove(completedworkout)
+
+                        Case 3
+
+                            Dim contador As Integer = 0
+
+                            For i = 0 To tarea.Count - 1
+                                contador += 1
+                            Next
+
+                            Console.WriteLine("hay " & contador & " tareas")
+
+                        Case 4
+
+                            For i = 0 To tarea.Count - 1
+                                Console.WriteLine(tarea(i))
+                            Next
+
+
+                        Case 5
+
+                            For i = 0 To tareacompletada.Count - 1
+                                Console.WriteLine(tareacompletada(i))
+                            Next
+
+                        Case 6
+
+                            For Each tareas In tarea
+                                Dim array() As String = tareas.ToString.Split("*"c)
+
+                                If array(2) = DateString Then
+                                    Console.WriteLine("La tarea " & tareas.ToString & " vence hoy")
+                                End If
+                            Next
+
+                        Case 7
+
+                            For Each tareas In tarea
+                                Dim array() As String = tareas.ToString.Split("*"c)
+
+                                If Convert.ToInt32(array(1)) > 8 Then
+                                    Console.WriteLine("La tarea " & tareas.ToString & " tiene prioridad mayor de 8")
+                                End If
+                            Next
+
+
+                    End Select
+
+                Loop While seleccion <> 8
 
 
 
             Case 13
 
+                Dim seleccion As Integer
+                Dim dni As ArrayList = New ArrayList()
+
+
+                Do
+
+                    Console.WriteLine("Introduzca lo que quiere hacer:")
+                    Console.WriteLine("1. Guardar DNI")
+                    Console.WriteLine("2. Eliminar DNI")
+                    Console.WriteLine("3. Mostrar DNI")
+                    Console.WriteLine("4. Contar DNI")
+                    Console.WriteLine("5. salir")
+                    seleccion = Convert.ToInt32(Console.ReadLine())
+
+
+                    Select Case seleccion
+                        Case 1
+
+                            Dim adddni As String
+
+                            Console.WriteLine("Introduzca su DNI:")
+                            adddni = Console.ReadLine()
+
+                            If dni.Contains(adddni) Then
+
+                            Else
+                                dni.Add(adddni)
+                            End If
+
+
+                        Case 2
+
+                            Dim deletedni As String
+
+                            Console.WriteLine("Introduzca el DNI que quiere eliminar:")
+                            deletedni = Console.ReadLine()
+
+                            dni.Remove(deletedni)
+
+
+                        Case 3
+
+                            For Each d In dni
+                                Console.WriteLine(d)
+                            Next
+
+                        Case 4
+
+                            Dim contador As Integer = 0
+
+                            For i = 0 To dni.Count - 1
+                                contador += 1
+                            Next
+
+                            Console.WriteLine("Hay " & contador & " dnis")
+
+
+                    End Select
 
 
 
 
+                Loop While seleccion <> 5
 
         End Select
 
