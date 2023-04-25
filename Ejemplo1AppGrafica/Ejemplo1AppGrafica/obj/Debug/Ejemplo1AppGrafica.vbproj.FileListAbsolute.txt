@@ -1,0 +1,12 @@
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\bin\Debug\Ejemplo1AppGrafica.exe.config
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\bin\Debug\Ejemplo1AppGrafica.exe
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\bin\Debug\Ejemplo1AppGrafica.pdb
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\bin\Debug\Ejemplo1AppGrafica.xml
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.vbproj.AssemblyReference.cache
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.Form1.resources
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.Resources.resources
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.vbproj.GenerateResource.cache
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.vbproj.CoreCompileInputs.cache
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.exe
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.xml
+C:\Users\alumno\Documents\GitHub\AO22\Ejemplo1AppGrafica\Ejemplo1AppGrafica\obj\Debug\Ejemplo1AppGrafica.pdb

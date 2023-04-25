@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "comprobar_text_teorico", "comprobar_text_teorico\comprobar_text_teorico.vbproj", "{24EDB188-2C6B-4BE3-BB16-97079E5B9D75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24EDB188-2C6B-4BE3-BB16-97079E5B9D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EDB188-2C6B-4BE3-BB16-97079E5B9D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EDB188-2C6B-4BE3-BB16-97079E5B9D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EDB188-2C6B-4BE3-BB16-97079E5B9D75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BB4305F-5A0F-409B-B7DE-F84FFCE4B850}
+	EndGlobalSection
+EndGlobal
