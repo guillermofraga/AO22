@@ -11,3 +11,4 @@ C:\Users\alumno\Documents\GitHub\AO22\EjemploCompletoAppGrafica\EjemploCompletoA
 C:\Users\alumno\Documents\GitHub\AO22\EjemploCompletoAppGrafica\EjemploCompletoAppGrafica\obj\Debug\EjemploCompletoAppGrafica.xml
 C:\Users\alumno\Documents\GitHub\AO22\EjemploCompletoAppGrafica\EjemploCompletoAppGrafica\obj\Debug\EjemploCompletoAppGrafica.pdb
 C:\Users\alumno\Documents\GitHub\AO22\EjemploCompletoAppGrafica\EjemploCompletoAppGrafica\obj\Debug\EjemploCompletoAppGrafica.Series.resources
+C:\Users\alumno\Documents\GitHub\AO22\EjemploCompletoAppGrafica\EjemploCompletoAppGrafica\obj\Debug\EjemploCompletoAppGrafica.TecladoEventos.resources

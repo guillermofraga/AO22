@@ -32,6 +32,7 @@ Partial Class Form1
         Me.dtpfechaestreno = New System.Windows.Forms.DateTimePicker()
         Me.lblfechaestreno = New System.Windows.Forms.Label()
         Me.btnAbrirconsultaseries = New System.Windows.Forms.Button()
+        Me.btnTE = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txttitulo
@@ -116,11 +117,21 @@ Partial Class Form1
         Me.btnAbrirconsultaseries.Text = "Consultar Series"
         Me.btnAbrirconsultaseries.UseVisualStyleBackColor = True
         '
+        'btnTE
+        '
+        Me.btnTE.Location = New System.Drawing.Point(526, 93)
+        Me.btnTE.Name = "btnTE"
+        Me.btnTE.Size = New System.Drawing.Size(127, 23)
+        Me.btnTE.TabIndex = 9
+        Me.btnTE.Text = "TecladoEventos"
+        Me.btnTE.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnTE)
         Me.Controls.Add(Me.btnAbrirconsultaseries)
         Me.Controls.Add(Me.dtpfechaestreno)
         Me.Controls.Add(Me.btnguardarserie)
@@ -148,4 +159,5 @@ Partial Class Form1
     Friend WithEvents dtpfechaestreno As DateTimePicker
     Friend WithEvents lblfechaestreno As Label
     Friend WithEvents btnAbrirconsultaseries As Button
+    Friend WithEvents btnTE As Button
 End Class

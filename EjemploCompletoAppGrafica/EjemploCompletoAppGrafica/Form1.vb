@@ -1,6 +1,8 @@
-﻿Public Class Form1
+﻿Imports System.IO
+Public Class Form1
     'Zona declaracion variables globales a Form1
     Public seriesVistas As New List(Of String)
+    Public rutaFichero As String = Directory.GetCurrentDirectory() + "\series.txt"
 
     Private Sub btnguardarserie_Click(sender As Object, e As EventArgs) Handles btnguardarserie.Click
         Dim titulo, plataforma As String
@@ -57,5 +59,44 @@
 
     Private Sub btnAbrirconsultaseries_Click(sender As Object, e As EventArgs) Handles btnAbrirconsultaseries.Click
         Series.ShowDialog()
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        Dim respuesta As DialogResult = MessageBox.Show("Desea actualizar el fichero", "Cuidado!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If respuesta = DialogResult.Yes Then
+            'Escribir la lista en el fichero
+            Dim escritor As StreamWriter = New StreamWriter(rutaFichero, False)
+            'Recorrer toda la lista y volcar registro a registro al fichero
+
+            For Each elemento As String In seriesVistas
+                escritor.WriteLine(elemento)
+            Next
+
+            escritor.Close()
+
+        End If
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Leer el fichero y volcar la información a la lista
+        Dim lector As StreamReader = New StreamReader(rutaFichero)
+
+        Dim registro As String = Nothing
+
+        While Not lector.EndOfStream
+            registro = lector.ReadLine()
+            seriesVistas.Add(registro)
+
+        End While
+
+        lector.Close()
+
+    End Sub
+
+    Private Sub btnTE_Click(sender As Object, e As EventArgs) Handles btnTE.Click
+        TecladoEventos.Show()
     End Sub
 End Class
