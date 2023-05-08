@@ -25,15 +25,15 @@ Partial Class Ejercicio2
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnConvertir = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtAño = New System.Windows.Forms.TextBox()
+        Me.txtMes = New System.Windows.Forms.TextBox()
+        Me.txtDia = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Fecha = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnSalir
@@ -63,33 +63,26 @@ Partial Class Ejercicio2
         Me.btnConvertir.Text = "Convertir"
         Me.btnConvertir.UseVisualStyleBackColor = True
         '
-        'DateTimePicker1
+        'txtAño
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(145, 231)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 24
+        Me.txtAño.Location = New System.Drawing.Point(145, 164)
+        Me.txtAño.Name = "txtAño"
+        Me.txtAño.Size = New System.Drawing.Size(97, 20)
+        Me.txtAño.TabIndex = 21
         '
-        'TextBox3
+        'txtMes
         '
-        Me.TextBox3.Location = New System.Drawing.Point(145, 164)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox3.TabIndex = 21
+        Me.txtMes.Location = New System.Drawing.Point(145, 138)
+        Me.txtMes.Name = "txtMes"
+        Me.txtMes.Size = New System.Drawing.Size(97, 20)
+        Me.txtMes.TabIndex = 22
         '
-        'TextBox2
+        'txtDia
         '
-        Me.TextBox2.Location = New System.Drawing.Point(145, 138)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox2.TabIndex = 22
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(145, 112)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox1.TabIndex = 23
+        Me.txtDia.Location = New System.Drawing.Point(145, 112)
+        Me.txtDia.Name = "txtDia"
+        Me.txtDia.Size = New System.Drawing.Size(97, 20)
+        Me.txtDia.TabIndex = 23
         '
         'Label4
         '
@@ -139,18 +132,26 @@ Partial Class Ejercicio2
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Introduce los datos"
         '
+        'Fecha
+        '
+        Me.Fecha.Enabled = False
+        Me.Fecha.Location = New System.Drawing.Point(145, 240)
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Size = New System.Drawing.Size(115, 20)
+        Me.Fecha.TabIndex = 28
+        '
         'Ejercicio2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Fecha)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnConvertir)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtAño)
+        Me.Controls.Add(Me.txtMes)
+        Me.Controls.Add(Me.txtDia)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -166,13 +167,13 @@ Partial Class Ejercicio2
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnConvertir As Button
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtAño As TextBox
+    Friend WithEvents txtMes As TextBox
+    Friend WithEvents txtDia As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Fecha As TextBox
 End Class
