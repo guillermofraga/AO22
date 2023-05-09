@@ -33,7 +33,7 @@ Partial Class Ejercicio2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Fecha = New System.Windows.Forms.TextBox()
+        Me.lblfecha = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnSalir
@@ -132,20 +132,24 @@ Partial Class Ejercicio2
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Introduce los datos"
         '
-        'Fecha
+        'lblfecha
         '
-        Me.Fecha.Enabled = False
-        Me.Fecha.Location = New System.Drawing.Point(145, 240)
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Size = New System.Drawing.Size(115, 20)
-        Me.Fecha.TabIndex = 28
+        Me.lblfecha.AutoSize = True
+        Me.lblfecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblfecha.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblfecha.Location = New System.Drawing.Point(145, 253)
+        Me.lblfecha.Name = "lblfecha"
+        Me.lblfecha.Size = New System.Drawing.Size(72, 24)
+        Me.lblfecha.TabIndex = 28
+        Me.lblfecha.Text = "Label6"
+        Me.lblfecha.Visible = False
         '
         'Ejercicio2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Fecha)
+        Me.Controls.Add(Me.lblfecha)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnConvertir)
@@ -175,5 +179,5 @@ Partial Class Ejercicio2
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Fecha As TextBox
+    Friend WithEvents lblfecha As Label
 End Class
