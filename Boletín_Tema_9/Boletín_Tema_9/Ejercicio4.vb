@@ -3,12 +3,17 @@
         Form1.Show()
     End Sub
     Private Sub btnConvertir_Click(sender As Object, e As EventArgs) Handles btnConvertir.Click
-        Dim horas, min, seg As Integer
+        Dim horas As Integer
 
         If txtHoras.Text = "" Then
             MessageBox.Show("No introdujo ninguna hora")
+            txtHoras.Focus()
         Else
-
+            horas = Convert.ToInt32(txtHoras.Text)
+            lblMinutos.Text = Convert.ToString(horas * 60)
+            lblMinutos.Show()
+            lblSegundos.Text = Convert.ToString(horas * 3600)
+            lblSegundos.Show()
         End If
 
 

@@ -118,7 +118,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnEjercicio5)
         Me.Controls.Add(Me.btnEjercicio1)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Menu"
         Me.ResumeLayout(False)
 
     End Sub

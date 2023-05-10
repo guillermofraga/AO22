@@ -27,8 +27,8 @@ Partial Class Ejercicio4
         Me.btnConvertir = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtMinutos = New System.Windows.Forms.TextBox()
-        Me.txtSegundos = New System.Windows.Forms.TextBox()
+        Me.lblMinutos = New System.Windows.Forms.Label()
+        Me.lblSegundos = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -71,35 +71,43 @@ Partial Class Ejercicio4
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(336, 253)
+        Me.Label3.Location = New System.Drawing.Point(324, 253)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 20)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Segundos"
         '
-        'txtMinutos
+        'lblMinutos
         '
-        Me.txtMinutos.Enabled = False
-        Me.txtMinutos.Location = New System.Drawing.Point(169, 253)
-        Me.txtMinutos.Name = "txtMinutos"
-        Me.txtMinutos.Size = New System.Drawing.Size(100, 20)
-        Me.txtMinutos.TabIndex = 3
+        Me.lblMinutos.AutoSize = True
+        Me.lblMinutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMinutos.ForeColor = System.Drawing.Color.Black
+        Me.lblMinutos.Location = New System.Drawing.Point(182, 253)
+        Me.lblMinutos.Name = "lblMinutos"
+        Me.lblMinutos.Size = New System.Drawing.Size(57, 20)
+        Me.lblMinutos.TabIndex = 5
+        Me.lblMinutos.Text = "Label4"
+        Me.lblMinutos.Visible = False
         '
-        'txtSegundos
+        'lblSegundos
         '
-        Me.txtSegundos.Enabled = False
-        Me.txtSegundos.Location = New System.Drawing.Point(441, 253)
-        Me.txtSegundos.Name = "txtSegundos"
-        Me.txtSegundos.Size = New System.Drawing.Size(100, 20)
-        Me.txtSegundos.TabIndex = 4
+        Me.lblSegundos.AutoSize = True
+        Me.lblSegundos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSegundos.ForeColor = System.Drawing.Color.Black
+        Me.lblSegundos.Location = New System.Drawing.Point(447, 253)
+        Me.lblSegundos.Name = "lblSegundos"
+        Me.lblSegundos.Size = New System.Drawing.Size(57, 20)
+        Me.lblSegundos.TabIndex = 6
+        Me.lblSegundos.Text = "Label5"
+        Me.lblSegundos.Visible = False
         '
         'Ejercicio4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.txtSegundos)
-        Me.Controls.Add(Me.txtMinutos)
+        Me.Controls.Add(Me.lblMinutos)
+        Me.Controls.Add(Me.lblSegundos)
         Me.Controls.Add(Me.txtHoras)
         Me.Controls.Add(Me.btnConvertir)
         Me.Controls.Add(Me.Label3)
@@ -117,6 +125,6 @@ Partial Class Ejercicio4
     Friend WithEvents btnConvertir As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtMinutos As TextBox
-    Friend WithEvents txtSegundos As TextBox
+    Friend WithEvents lblMinutos As Label
+    Friend WithEvents lblSegundos As Label
 End Class
