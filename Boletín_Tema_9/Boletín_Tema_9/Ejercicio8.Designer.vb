@@ -23,7 +23,7 @@ Partial Class Ejercicio8
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtmDatosfechanacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDatosfechanacimiento = New System.Windows.Forms.DateTimePicker()
         Me.txtDatosDNI = New System.Windows.Forms.TextBox()
         Me.txtDatosemail = New System.Windows.Forms.TextBox()
         Me.txtDatosedad = New System.Windows.Forms.TextBox()
@@ -36,29 +36,29 @@ Partial Class Ejercicio8
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtVisualizarnombre = New System.Windows.Forms.TextBox()
-        Me.txtVisualizarapellidos = New System.Windows.Forms.TextBox()
-        Me.txtVisualizaredad = New System.Windows.Forms.TextBox()
-        Me.txtVisualizaremail = New System.Windows.Forms.TextBox()
-        Me.txtVisualizardni = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtBuscarusuario = New System.Windows.Forms.TextBox()
-        Me.txtEliminarusuario = New System.Windows.Forms.TextBox()
-        Me.btnGuardarusuario = New System.Windows.Forms.Button()
-        Me.btnBuscarusuario = New System.Windows.Forms.Button()
-        Me.btnEliminarusuario = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtVisualizardni = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtVisualizaremail = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtVisualizaredad = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtVisualizarapellidos = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtVisualizarnombre = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnBorrarusuario = New System.Windows.Forms.Button()
+        Me.txtEliminarusuario = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarusuario = New System.Windows.Forms.Button()
+        Me.txtBuscarusuario = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnGuardarusuario = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -67,7 +67,7 @@ Partial Class Ejercicio8
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.dtmDatosfechanacimiento)
+        Me.GroupBox1.Controls.Add(Me.dtpDatosfechanacimiento)
         Me.GroupBox1.Controls.Add(Me.txtDatosDNI)
         Me.GroupBox1.Controls.Add(Me.txtDatosemail)
         Me.GroupBox1.Controls.Add(Me.txtDatosedad)
@@ -88,13 +88,13 @@ Partial Class Ejercicio8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Personales"
         '
-        'dtmDatosfechanacimiento
+        'dtpDatosfechanacimiento
         '
-        Me.dtmDatosfechanacimiento.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtmDatosfechanacimiento.Location = New System.Drawing.Point(188, 252)
-        Me.dtmDatosfechanacimiento.Name = "dtmDatosfechanacimiento"
-        Me.dtmDatosfechanacimiento.Size = New System.Drawing.Size(228, 26)
-        Me.dtmDatosfechanacimiento.TabIndex = 4
+        Me.dtpDatosfechanacimiento.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDatosfechanacimiento.Location = New System.Drawing.Point(188, 252)
+        Me.dtpDatosfechanacimiento.Name = "dtpDatosfechanacimiento"
+        Me.dtpDatosfechanacimiento.Size = New System.Drawing.Size(228, 26)
+        Me.dtpDatosfechanacimiento.TabIndex = 4
         '
         'txtDatosDNI
         '
@@ -210,9 +210,125 @@ Partial Class Ejercicio8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Visualizar usuario"
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(216, 250)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(55, 26)
+        Me.Button7.TabIndex = 4
+        Me.Button7.Text = ">>"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(155, 250)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(55, 26)
+        Me.Button6.TabIndex = 4
+        Me.Button6.Text = ">"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(94, 250)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(55, 26)
+        Me.Button5.TabIndex = 4
+        Me.Button5.Text = "<"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(33, 250)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(55, 26)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "<<"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 172)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(53, 20)
+        Me.Label12.TabIndex = 2
+        Me.Label12.Text = "Email"
+        '
+        'txtVisualizardni
+        '
+        Me.txtVisualizardni.Location = New System.Drawing.Point(119, 206)
+        Me.txtVisualizardni.Name = "txtVisualizardni"
+        Me.txtVisualizardni.Size = New System.Drawing.Size(100, 26)
+        Me.txtVisualizardni.TabIndex = 3
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 36)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(76, 20)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Nombre:"
+        '
+        'txtVisualizaremail
+        '
+        Me.txtVisualizaremail.Location = New System.Drawing.Point(119, 169)
+        Me.txtVisualizaremail.Name = "txtVisualizaremail"
+        Me.txtVisualizaremail.Size = New System.Drawing.Size(100, 26)
+        Me.txtVisualizaremail.TabIndex = 3
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 82)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(82, 20)
+        Me.Label9.TabIndex = 1
+        Me.Label9.Text = "Apellidos"
+        '
+        'txtVisualizaredad
+        '
+        Me.txtVisualizaredad.Location = New System.Drawing.Point(119, 124)
+        Me.txtVisualizaredad.Name = "txtVisualizaredad"
+        Me.txtVisualizaredad.Size = New System.Drawing.Size(48, 26)
+        Me.txtVisualizaredad.TabIndex = 3
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 127)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(51, 20)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Edad"
+        '
+        'txtVisualizarapellidos
+        '
+        Me.txtVisualizarapellidos.Location = New System.Drawing.Point(119, 82)
+        Me.txtVisualizarapellidos.Name = "txtVisualizarapellidos"
+        Me.txtVisualizarapellidos.Size = New System.Drawing.Size(100, 26)
+        Me.txtVisualizarapellidos.TabIndex = 0
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 212)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(40, 20)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "DNI"
+        '
+        'txtVisualizarnombre
+        '
+        Me.txtVisualizarnombre.Location = New System.Drawing.Point(119, 36)
+        Me.txtVisualizarnombre.Name = "txtVisualizarnombre"
+        Me.txtVisualizarnombre.Size = New System.Drawing.Size(100, 26)
+        Me.txtVisualizarnombre.TabIndex = 3
+        '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.btnEliminarusuario)
+        Me.GroupBox4.Controls.Add(Me.btnBorrarusuario)
         Me.GroupBox4.Controls.Add(Me.txtEliminarusuario)
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Location = New System.Drawing.Point(661, 312)
@@ -220,7 +336,34 @@ Partial Class Ejercicio8
         Me.GroupBox4.Size = New System.Drawing.Size(127, 104)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Eliminar Usuario"
+        Me.GroupBox4.Text = "Borrar Usuario"
+        '
+        'btnBorrarusuario
+        '
+        Me.btnBorrarusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBorrarusuario.Location = New System.Drawing.Point(38, 53)
+        Me.btnBorrarusuario.Name = "btnBorrarusuario"
+        Me.btnBorrarusuario.Size = New System.Drawing.Size(78, 44)
+        Me.btnBorrarusuario.TabIndex = 4
+        Me.btnBorrarusuario.Text = "Borrar usuario"
+        Me.btnBorrarusuario.UseVisualStyleBackColor = True
+        '
+        'txtEliminarusuario
+        '
+        Me.txtEliminarusuario.Location = New System.Drawing.Point(38, 27)
+        Me.txtEliminarusuario.Name = "txtEliminarusuario"
+        Me.txtEliminarusuario.Size = New System.Drawing.Size(83, 20)
+        Me.txtEliminarusuario.TabIndex = 3
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(6, 30)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(34, 16)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "DNI"
         '
         'GroupBox3
         '
@@ -234,130 +377,6 @@ Partial Class Ejercicio8
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Buscar Usuario"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 30)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(34, 16)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "DNI"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 36)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 20)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Nombre:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 82)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(82, 20)
-        Me.Label9.TabIndex = 1
-        Me.Label9.Text = "Apellidos"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 127)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(51, 20)
-        Me.Label10.TabIndex = 2
-        Me.Label10.Text = "Edad"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 212)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(40, 20)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "DNI"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 172)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(53, 20)
-        Me.Label12.TabIndex = 2
-        Me.Label12.Text = "Email"
-        '
-        'txtVisualizarnombre
-        '
-        Me.txtVisualizarnombre.Location = New System.Drawing.Point(119, 36)
-        Me.txtVisualizarnombre.Name = "txtVisualizarnombre"
-        Me.txtVisualizarnombre.Size = New System.Drawing.Size(100, 26)
-        Me.txtVisualizarnombre.TabIndex = 3
-        '
-        'txtVisualizarapellidos
-        '
-        Me.txtVisualizarapellidos.Location = New System.Drawing.Point(119, 82)
-        Me.txtVisualizarapellidos.Name = "txtVisualizarapellidos"
-        Me.txtVisualizarapellidos.Size = New System.Drawing.Size(100, 26)
-        Me.txtVisualizarapellidos.TabIndex = 0
-        '
-        'txtVisualizaredad
-        '
-        Me.txtVisualizaredad.Location = New System.Drawing.Point(119, 124)
-        Me.txtVisualizaredad.Name = "txtVisualizaredad"
-        Me.txtVisualizaredad.Size = New System.Drawing.Size(48, 26)
-        Me.txtVisualizaredad.TabIndex = 3
-        '
-        'txtVisualizaremail
-        '
-        Me.txtVisualizaremail.Location = New System.Drawing.Point(119, 169)
-        Me.txtVisualizaremail.Name = "txtVisualizaremail"
-        Me.txtVisualizaremail.Size = New System.Drawing.Size(100, 26)
-        Me.txtVisualizaremail.TabIndex = 3
-        '
-        'txtVisualizardni
-        '
-        Me.txtVisualizardni.Location = New System.Drawing.Point(119, 206)
-        Me.txtVisualizardni.Name = "txtVisualizardni"
-        Me.txtVisualizardni.Size = New System.Drawing.Size(100, 26)
-        Me.txtVisualizardni.TabIndex = 3
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(6, 30)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(34, 16)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "DNI"
-        '
-        'txtBuscarusuario
-        '
-        Me.txtBuscarusuario.Location = New System.Drawing.Point(38, 27)
-        Me.txtBuscarusuario.Name = "txtBuscarusuario"
-        Me.txtBuscarusuario.Size = New System.Drawing.Size(83, 20)
-        Me.txtBuscarusuario.TabIndex = 3
-        '
-        'txtEliminarusuario
-        '
-        Me.txtEliminarusuario.Location = New System.Drawing.Point(38, 27)
-        Me.txtEliminarusuario.Name = "txtEliminarusuario"
-        Me.txtEliminarusuario.Size = New System.Drawing.Size(83, 20)
-        Me.txtEliminarusuario.TabIndex = 3
-        '
-        'btnGuardarusuario
-        '
-        Me.btnGuardarusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarusuario.Location = New System.Drawing.Point(101, 342)
-        Me.btnGuardarusuario.Name = "btnGuardarusuario"
-        Me.btnGuardarusuario.Size = New System.Drawing.Size(144, 59)
-        Me.btnGuardarusuario.TabIndex = 4
-        Me.btnGuardarusuario.Text = "Guardar usuario"
-        Me.btnGuardarusuario.UseVisualStyleBackColor = True
-        '
         'btnBuscarusuario
         '
         Me.btnBuscarusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -368,51 +387,32 @@ Partial Class Ejercicio8
         Me.btnBuscarusuario.Text = "Buscar usuario"
         Me.btnBuscarusuario.UseVisualStyleBackColor = True
         '
-        'btnEliminarusuario
+        'txtBuscarusuario
         '
-        Me.btnEliminarusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarusuario.Location = New System.Drawing.Point(38, 53)
-        Me.btnEliminarusuario.Name = "btnEliminarusuario"
-        Me.btnEliminarusuario.Size = New System.Drawing.Size(78, 44)
-        Me.btnEliminarusuario.TabIndex = 4
-        Me.btnEliminarusuario.Text = "Borrar usuario"
-        Me.btnEliminarusuario.UseVisualStyleBackColor = True
+        Me.txtBuscarusuario.Location = New System.Drawing.Point(38, 27)
+        Me.txtBuscarusuario.Name = "txtBuscarusuario"
+        Me.txtBuscarusuario.Size = New System.Drawing.Size(83, 20)
+        Me.txtBuscarusuario.TabIndex = 3
         '
-        'Button4
+        'Label7
         '
-        Me.Button4.Location = New System.Drawing.Point(33, 250)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(55, 26)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "<<"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(6, 30)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(34, 16)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "DNI"
         '
-        'Button5
+        'btnGuardarusuario
         '
-        Me.Button5.Location = New System.Drawing.Point(94, 250)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(55, 26)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "<"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(155, 250)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(55, 26)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = ">"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(216, 250)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(55, 26)
-        Me.Button7.TabIndex = 4
-        Me.Button7.Text = ">>"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btnGuardarusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarusuario.Location = New System.Drawing.Point(101, 342)
+        Me.btnGuardarusuario.Name = "btnGuardarusuario"
+        Me.btnGuardarusuario.Size = New System.Drawing.Size(144, 59)
+        Me.btnGuardarusuario.TabIndex = 4
+        Me.btnGuardarusuario.Text = "Guardar usuario"
+        Me.btnGuardarusuario.UseVisualStyleBackColor = True
         '
         'Ejercicio8
         '
@@ -442,7 +442,7 @@ Partial Class Ejercicio8
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents dtmDatosfechanacimiento As DateTimePicker
+    Friend WithEvents dtpDatosfechanacimiento As DateTimePicker
     Friend WithEvents txtDatosDNI As TextBox
     Friend WithEvents txtDatosemail As TextBox
     Friend WithEvents txtDatosedad As TextBox
@@ -464,7 +464,7 @@ Partial Class Ejercicio8
     Friend WithEvents txtVisualizarapellidos As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtVisualizarnombre As TextBox
-    Friend WithEvents btnEliminarusuario As Button
+    Friend WithEvents btnBorrarusuario As Button
     Friend WithEvents txtEliminarusuario As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents btnBuscarusuario As Button
