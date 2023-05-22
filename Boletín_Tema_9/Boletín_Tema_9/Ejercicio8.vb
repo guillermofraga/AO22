@@ -30,8 +30,16 @@
             Email = txtDatosnombre.Text
         End If
 
+        DNI = txtDatosDNI.Text
+
         If txtDatosDNI.Text = "" Then
             MessageBox.Show("No introdujo ningun DNI")
+        ElseIf DNI.Length > 9 Or DNI.Length < 9 Then
+            MessageBox.Show("Su DNI es incorrecto")
+        ElseIf Not Char.IsLetter(Convert.ToChar(DNI.Length - 1)) Then 'error no resta
+            MessageBox.Show("Su DNI no tiene letra")
+            'ElseIf DNI.Substring(0, 7) Then
+            'MessageBox.Show("Su DNI no tiene 8 digitos")
         Else
             Dim DNIbien As Double
             Dim letra As Char
