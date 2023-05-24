@@ -1,16 +1,26 @@
 ﻿Imports System.IO
 Public Class Ejercicio8
 
-    Dim fichero As New StreamWriter() = Directory.GetCurrentDirectory + ("\Datos.txt")
+    Dim ruta As String = Directory.GetCurrentDirectory + ("\Datos.txt")
+    Dim datos As New ArrayList
 
     Private Sub Ejercicio8_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Form1.Show()
+        txtDatosnombre.Text = ""
+        txtDatosapellidos.Text = ""
+        txtDatosedad.Text = ""
+        txtDatosemail.Text = ""
+        txtDatosDNI.Text = ""
+
     End Sub
 
     Private Sub btnGuardarusuario_Click(sender As Object, e As EventArgs) Handles btnGuardarusuario.Click
         Dim Nombre, Apellidos, Edad, Email, DNI, fecha As String
         Dim correcto As Integer = 0
-        Dim edadcorrecto As Boolean
+        Dim edadcorrecto As Boolean = True
+        Dim datosseparado As String
+        Dim fichero As StreamWriter = New StreamWriter(ruta, True)
+
 
         For i = 0 To txtDatosedad.Text.Length - 1
             If Char.IsLetter(txtDatosedad.Text(i)) Then
@@ -29,7 +39,7 @@ Public Class Ejercicio8
         If txtDatosapellidos.Text = "" Then
             MessageBox.Show("No introdujo ningun Apellido")
         Else
-            Apellidos = txtDatosnombre.Text
+            Apellidos = txtDatosapellidos.Text
             correcto += 1
         End If
 
@@ -40,7 +50,7 @@ Public Class Ejercicio8
         ElseIf txtDatosapellidos.Text < "18" Then
             MessageBox.Show("No es mayor de edad")
         Else
-            Edad = txtDatosnombre.Text
+            Edad = txtDatosedad.Text
             correcto += 1
         End If
 
@@ -51,7 +61,7 @@ Public Class Ejercicio8
             MessageBox.Show("Su email no contiene ningun arroba")
         Else
             If txtDatosemail.Text.EndsWith(".com") Or txtDatosemail.Text.EndsWith(".es") Or txtDatosemail.Text.EndsWith(".org") Or txtDatosemail.Text.EndsWith(".io") Then
-                Email = txtDatosnombre.Text
+                Email = txtDatosemail.Text
                 correcto += 1
             Else
                 MessageBox.Show("Su email no contiene el nombre de ningun dominio (.com , .es , .org , .io)")
@@ -93,7 +103,7 @@ Public Class Ejercicio8
             DNIbien = DNIbien Mod 23
             If letra = letras(Convert.ToInt32(DNIbien)) Then
                 MessageBox.Show(Convert.ToString(DNIbien))
-                DNI = txtDatosnombre.Text
+                DNI = txtDatosDNI.Text
                 correcto += 1
             Else
                 MessageBox.Show("Su letra del DNI es incorrecta")
@@ -103,14 +113,50 @@ Public Class Ejercicio8
         End If
 
 
-
+        Dim respuesta, respuestaGuardar As DialogResult
         fecha = Convert.ToString(dtpDatosfechanacimiento.Value)
-
-        MessageBox.Show(fecha)
-
         If correcto = 5 Then
-
+            respuesta = MessageBox.Show("La fecha es correcta? s/n: " & fecha, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         End If
+
+        If respuesta = DialogResult.Yes And correcto = 5 Then
+            datosseparado = Nombre & "*" & Apellidos & "*" & Edad & "*" & Email & "*" & DNI & "*" & fecha
+            respuestaGuardar = MessageBox.Show("Los Datos son correctos " & datosseparado.Split("*"c)(0) & " - " & datosseparado.Split("*"c)(1) & " - " & datosseparado.Split("*"c)(2) & " - " & datosseparado.Split("*"c)(3) & " - " & datosseparado.Split("*"c)(4) & " - " & datosseparado.Split("*"c)(5), "Confirmación para guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        End If
+
+        If respuestaGuardar = DialogResult.Yes Then
+            datos.Add(datosseparado)
+            fichero.WriteLine(datosseparado)
+            MessageBox.Show("La base de datos personales ha sido actualizada")
+            fichero.Close()
+        End If
+
+
+
+    End Sub
+
+    Private Sub Ejercicio8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        Dim lector As New StreamReader(ruta)
+        Dim contador As Integer
+        Dim leerdatos(99) As String
+
+        While Not lector.EndOfStream
+            leerdatos(contador) = lector.ReadLine()
+            contador += 1
+        End While
+
+        lector.Close()
+
+
+        txtVisualizarnombre.Text = leerdatos(0).Split("*"c)(0)
+        txtVisualizarapellidos.Text = leerdatos(0).Split("*"c)(1)
+        txtVisualizaredad.Text = leerdatos(0).Split("*"c)(2)
+        txtVisualizaremail.Text = leerdatos(0).Split("*"c)(3)
+        txtVisualizardni.Text = leerdatos(0).Split("*"c)(4)
+
+
 
 
     End Sub
