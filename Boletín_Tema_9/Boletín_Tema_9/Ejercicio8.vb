@@ -132,7 +132,7 @@ Public Class Ejercicio8
 
         While Not lector1.EndOfStream
             leerdatos1(contadorlector) = lector1.ReadLine()
-            contadorlector += 1
+                contadorlector += 1
         End While
 
         lector1.Close()
@@ -170,7 +170,7 @@ Public Class Ejercicio8
 
         While Not lector.EndOfStream
             leerdatos(contador) = lector.ReadLine()
-            contador += 1
+                contador += 1
         End While
 
         lector.Close()
@@ -201,6 +201,50 @@ Public Class Ejercicio8
         If e.KeyCode = Keys.Back Then
             txtDatosedad.Text = ""
         End If
+
+    End Sub
+
+    Private Sub btnPrimero_Click(sender As Object, e As EventArgs) Handles btnPrimero.Click
+
+        Dim lector2 As New StreamReader(ruta)
+        Dim contador2 As Integer
+        Dim leerdatos2(99) As String
+
+        While Not lector2.EndOfStream
+            leerdatos2(contador2) = lector2.ReadLine()
+            contador2 += 1
+        End While
+
+        lector2.Close()
+
+        txtVisualizarnombre.Text = leerdatos2(0).Split("*"c)(0)
+        txtVisualizarapellidos.Text = leerdatos2(0).Split("*"c)(1)
+        txtVisualizaredad.Text = leerdatos2(0).Split("*"c)(2)
+        txtVisualizaremail.Text = leerdatos2(0).Split("*"c)(3)
+        txtVisualizardni.Text = leerdatos2(0).Split("*"c)(4)
+
+    End Sub
+
+    Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
+
+        Dim lector3 As New StreamReader(ruta)
+        Dim contador3 As Integer
+        Dim leerdatos3(99) As String
+
+        While Not lector3.EndOfStream
+            leerdatos3(contador3) = lector3.ReadLine()
+            contador3 += 1
+        End While
+
+        MessageBox.Show(leerdatos3(leerdatos3.Length - 1))
+
+        lector3.Close()
+
+        txtVisualizarnombre.Text = leerdatos3(leerdatos3.Length - 1).Split("*"c)(0)
+        txtVisualizarapellidos.Text = leerdatos3(leerdatos3.Length - 1).Split("*"c)(1)
+        txtVisualizaredad.Text = leerdatos3(leerdatos3.Length - 1).Split("*"c)(2)
+        txtVisualizaremail.Text = leerdatos3(leerdatos3.Length - 1).Split("*"c)(3)
+        txtVisualizardni.Text = leerdatos3(leerdatos3.Length - 1).Split("*"c)(4)
 
     End Sub
 End Class

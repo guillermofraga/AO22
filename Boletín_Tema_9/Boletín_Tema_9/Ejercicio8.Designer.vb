@@ -36,10 +36,10 @@ Partial Class Ejercicio8
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnsiguiente = New System.Windows.Forms.Button()
+        Me.btnanterior = New System.Windows.Forms.Button()
+        Me.btnPrimero = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtVisualizardni = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -187,10 +187,10 @@ Partial Class Ejercicio8
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button7)
-        Me.GroupBox2.Controls.Add(Me.Button6)
-        Me.GroupBox2.Controls.Add(Me.Button5)
-        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Controls.Add(Me.btnUltimo)
+        Me.GroupBox2.Controls.Add(Me.btnsiguiente)
+        Me.GroupBox2.Controls.Add(Me.btnanterior)
+        Me.GroupBox2.Controls.Add(Me.btnPrimero)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.txtVisualizardni)
         Me.GroupBox2.Controls.Add(Me.Label8)
@@ -210,41 +210,41 @@ Partial Class Ejercicio8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Visualizar usuario"
         '
-        'Button7
+        'btnUltimo
         '
-        Me.Button7.Location = New System.Drawing.Point(216, 250)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(55, 26)
-        Me.Button7.TabIndex = 4
-        Me.Button7.Text = ">>"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btnUltimo.Location = New System.Drawing.Point(216, 250)
+        Me.btnUltimo.Name = "btnUltimo"
+        Me.btnUltimo.Size = New System.Drawing.Size(55, 26)
+        Me.btnUltimo.TabIndex = 4
+        Me.btnUltimo.Text = ">>"
+        Me.btnUltimo.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btnsiguiente
         '
-        Me.Button6.Location = New System.Drawing.Point(155, 250)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(55, 26)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = ">"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnsiguiente.Location = New System.Drawing.Point(155, 250)
+        Me.btnsiguiente.Name = "btnsiguiente"
+        Me.btnsiguiente.Size = New System.Drawing.Size(55, 26)
+        Me.btnsiguiente.TabIndex = 4
+        Me.btnsiguiente.Text = ">"
+        Me.btnsiguiente.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnanterior
         '
-        Me.Button5.Location = New System.Drawing.Point(94, 250)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(55, 26)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "<"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnanterior.Location = New System.Drawing.Point(94, 250)
+        Me.btnanterior.Name = "btnanterior"
+        Me.btnanterior.Size = New System.Drawing.Size(55, 26)
+        Me.btnanterior.TabIndex = 4
+        Me.btnanterior.Text = "<"
+        Me.btnanterior.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnPrimero
         '
-        Me.Button4.Location = New System.Drawing.Point(33, 250)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(55, 26)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "<<"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnPrimero.Location = New System.Drawing.Point(33, 250)
+        Me.btnPrimero.Name = "btnPrimero"
+        Me.btnPrimero.Size = New System.Drawing.Size(55, 26)
+        Me.btnPrimero.TabIndex = 4
+        Me.btnPrimero.Text = "<<"
+        Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -471,8 +471,8 @@ Partial Class Ejercicio8
     Friend WithEvents txtBuscarusuario As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents btnGuardarusuario As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnUltimo As Button
+    Friend WithEvents btnsiguiente As Button
+    Friend WithEvents btnanterior As Button
+    Friend WithEvents btnPrimero As Button
 End Class
