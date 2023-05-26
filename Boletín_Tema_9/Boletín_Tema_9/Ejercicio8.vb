@@ -19,7 +19,8 @@ Public Class Ejercicio8
         Dim correcto As Integer = 0
         Dim edadcorrecto As Boolean = True
         Dim datosseparado As String
-        Dim fichero As StreamWriter = New StreamWriter(ruta, True)
+        Dim dnirepetido As Boolean = True
+
 
 
         For i = 0 To txtDatosedad.Text.Length - 1
@@ -76,7 +77,7 @@ Public Class Ejercicio8
         DNI = txtDatosDNI.Text
 
 
-        Dim contador As Integer
+        Dim contador As Integer = 0
 
 
         For i = 0 To DNI.Length - 1
@@ -102,7 +103,6 @@ Public Class Ejercicio8
             DNIbien = Convert.ToDouble(txtDatosDNI.Text.Substring(0, 8))
             DNIbien = DNIbien Mod 23
             If letra = letras(Convert.ToInt32(DNIbien)) Then
-                MessageBox.Show(Convert.ToString(DNIbien))
                 DNI = txtDatosDNI.Text
                 correcto += 1
             Else
@@ -114,7 +114,9 @@ Public Class Ejercicio8
 
 
         Dim respuesta, respuestaGuardar As DialogResult
+
         fecha = Convert.ToString(dtpDatosfechanacimiento.Value)
+
         If correcto = 5 Then
             respuesta = MessageBox.Show("La fecha es correcta? s/n: " & fecha, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         End If
@@ -124,11 +126,34 @@ Public Class Ejercicio8
             respuestaGuardar = MessageBox.Show("Los Datos son correctos " & datosseparado.Split("*"c)(0) & " - " & datosseparado.Split("*"c)(1) & " - " & datosseparado.Split("*"c)(2) & " - " & datosseparado.Split("*"c)(3) & " - " & datosseparado.Split("*"c)(4) & " - " & datosseparado.Split("*"c)(5), "Confirmación para guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         End If
 
-        If respuestaGuardar = DialogResult.Yes Then
+        Dim lector1 As New StreamReader(ruta)
+        Dim contadorlector As Integer = 0
+        Dim leerdatos1(99) As String
+
+        While Not lector1.EndOfStream
+            leerdatos1(contadorlector) = lector1.ReadLine()
+            contadorlector += 1
+        End While
+
+        lector1.Close()
+
+        For i = 0 To leerdatos1.Length - 1
+            If txtDatosDNI.Text <> "" And leerdatos1(i) <> "" Then
+                If txtDatosDNI.Text = leerdatos1(i).Split("*"c)(4) Then
+                    dnirepetido = False
+                End If
+            End If
+        Next
+
+        Dim fichero As StreamWriter = New StreamWriter(ruta, True)
+
+        If respuestaGuardar = DialogResult.Yes And dnirepetido = True Then
             datos.Add(datosseparado)
             fichero.WriteLine(datosseparado)
             MessageBox.Show("La base de datos personales ha sido actualizada")
             fichero.Close()
+        Else
+            MessageBox.Show("Su dni esta repetido")
         End If
 
 
@@ -136,7 +161,8 @@ Public Class Ejercicio8
     End Sub
 
     Private Sub Ejercicio8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtDatosDNI.MaxLength = 9
+        txtDatosedad.MaxLength = 3
 
         Dim lector As New StreamReader(ruta)
         Dim contador As Integer
@@ -158,6 +184,23 @@ Public Class Ejercicio8
 
 
 
+
+    End Sub
+
+    Private Sub txtDatosedad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDatosedad.KeyPress
+        Dim botonpulsado As Char = e.KeyChar
+
+        If Not Char.IsDigit(botonpulsado) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub txtDatosedad_KeyDown(sender As Object, e As KeyEventArgs) Handles txtDatosedad.KeyDown
+
+        If e.KeyCode = Keys.Back Then
+            txtDatosedad.Text = ""
+        End If
 
     End Sub
 End Class
